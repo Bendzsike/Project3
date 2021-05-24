@@ -51,7 +51,7 @@ void PrintHeap(HEAP heap){
     }
 }
 
-void Sullyesztes(HEAP *heap, int i){
+void Sink(HEAP *heap, int i){
     int j;
     while(2*i<(*heap).size){
         j = 2*i;
@@ -71,7 +71,7 @@ void Delete(HEAP *heap){
     Swap(&(*heap).elements[0], &(*heap).elements[(*heap).size - 1]);
     --(*heap).size;
     (*heap).elements = (int*)realloc((*heap).elements, sizeof(int)*(*heap).size);
-    Sullyesztes(heap, 0);
+    Sink(heap, 0);
 }
 
 void IncreaseDataAtIndex(HEAP* mH, int index, int value){
@@ -79,7 +79,7 @@ void IncreaseDataAtIndex(HEAP* mH, int index, int value){
         (*mH).elements[index] = value;
         if ( (*mH).elements[index/2] < value ) {
             Lift(mH, index);
-        } else Sullyesztes(mH, index);
+        } else Sink(mH, index);
     }
 }
 

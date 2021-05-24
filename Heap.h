@@ -14,6 +14,7 @@ typedef struct{
 void Create(HEAP *heap);
 void Insert(HEAP *heap, int key);
 void Lift(HEAP *heap, int i);
+void Sink(HEAP *heap, int i);
 void Swap(int *a, int *b);
 int Top(HEAP heap);
 void PrintHeap(HEAP heap);
