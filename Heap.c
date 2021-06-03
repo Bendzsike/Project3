@@ -4,7 +4,7 @@
 
 #include "Heap.h"
 
-void Create(HEAP *heap){
+void createH(HEAP *heap){
     (*heap).size = 0;
     (*heap).elements = (int*)malloc(0*sizeof(int));
     if((*heap).elements==NULL){
@@ -15,7 +15,7 @@ void Create(HEAP *heap){
 
 void Insert(HEAP *heap, int key){
     if(heap==NULL){
-        Create(&heap);
+        createH(&heap);
     }
     (*heap).size++;
     (*heap).elements = (int*)realloc((*heap).elements, (*heap).size*sizeof(int));

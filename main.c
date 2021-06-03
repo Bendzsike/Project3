@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include "Run.h"
 
 int main() {
-    printf("This is the new project!\n");
-    //This is a test push
+    generateElementsIA();
+    IAtime();
     return 0;
 }

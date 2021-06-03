@@ -20,7 +20,7 @@ void createArray(intArray *array);
 //tömb tartalmának beolvasása állományból
 void readArray(const char *fileName, intArray* array);
 //tömb tartalmának véletlenszámokkal való feltöltése
-void fillArray(intArray* array, int first, int last);
+void fillArray(intArray* array, int elements[]);
 //tömb tartalmának kiiratása a képernyőre
 void printArray(intArray array);
 //tömb tartalmának kiiratása állományba

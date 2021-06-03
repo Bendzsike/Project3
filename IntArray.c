@@ -21,10 +21,9 @@ void readArray(const char *fileName, intArray* array) {
     }
     fclose(input);
 }
-void fillArray(intArray* array, int first, int last) {
-    srand(time(NULL));
+void fillArray(intArray* array, int elements[]) {
     for(int i = 0; i < (*array).size; ++i) {
-        (*array).elements[i] = rand() % last + first;
+        (*array).elements[i] = elements[i];
     }
 }
 

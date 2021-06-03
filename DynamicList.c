@@ -4,14 +4,14 @@
 
 #include "DynamicList.h"
 
-DynamicList* create() {
+DynamicList* createDL() {
     DynamicList *node = (DynamicList*)calloc(1, sizeof(DynamicList));
     node->next = NULL;
     return node;
 }
 
 void insertSorted(DynamicList **front, int value) {
-    DynamicList *new = create();
+    DynamicList *new = createDL();
     new->info = value;
     if((*front) == NULL) {
         (*front) = new;
@@ -35,14 +35,14 @@ void insertSorted(DynamicList **front, int value) {
 }
 
 void addFirst(DynamicList **front, int value) {
-    DynamicList *new = create();
+    DynamicList *new = createDL();
     new->info = value;
     new->next = (*front);
     (*front) = new;
 }
 
 void addLast(DynamicList **front, int value) {
-    DynamicList *new = create();
+    DynamicList *new = createDL();
     new->info = value;
     new->next = NULL;
     if((*front) == NULL) {

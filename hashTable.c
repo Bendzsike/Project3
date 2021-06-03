@@ -26,7 +26,7 @@ int getPrime(int n){
     return n;
 }
 
-void create(){
+void createHT(){
     capacity = getPrime(capacity);
     array = (struct set *)malloc(capacity * sizeof(struct set));
     for (int i = 0; i < capacity; i++){
@@ -41,7 +41,7 @@ void freeHashTable(){
     size = 0;
 }
 
-void insert(int key, int data){
+void insertHT(int key, int data){
     int index = hashFunction(key);
     if (array[index].data == 0){
         array[index].key = key;

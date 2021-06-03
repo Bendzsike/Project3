@@ -14,7 +14,7 @@ Node* newNode(int );
 void inorder(Node* );
 void preorder(Node* );
 void postorder(Node* );
-Node* insert(Node* , int );
+Node* insertBST(Node *node, int key);
 void fillingUp(Node** );
 void push(Node** , int* , int first, int last);
 Node* minValueNode(Node* );

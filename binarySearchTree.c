@@ -15,14 +15,14 @@ void inorder(Node *root) {
     }
 }
 
-Node *insert(Node *node, int key) {
+Node *insertBST(Node *node, int key) {
     if (node == NULL)
         return newNode(key);
 
     if (key < node->key)
-        node->left = insert(node->left, key);
+        node->left = insertBST(node->left, key);
     else
-        node->right = insert(node->right, key);
+        node->right = insertBST(node->right, key);
 
     return node;
 }
@@ -32,7 +32,7 @@ void fillingUp(Node **node) {
     for (int i = 0; i < 94; ++i) {
         array[i] = (i+32);
     }
-    (*node) = insert((*node), 126);
+    (*node) = insertBST((*node), 126);
     push(&(*node),array,0,94);
 }
 
@@ -46,7 +46,7 @@ void push(Node **node, int *array, int first, int last) {
     } else {
         mid = (first + last) / 2 + 1;
     }
-    (*node) = insert((*node), array[mid]);
+    (*node) = insertBST((*node), array[mid]);
     push(&(*node), array, first, mid - 1);
     push(&(*node), array, mid + 1, last);
 }

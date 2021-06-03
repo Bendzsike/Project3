@@ -11,7 +11,7 @@ typedef struct{
     int size, *elements;
 }HEAP;
 
-void Create(HEAP *heap);
+void createH(HEAP *heap);
 void Insert(HEAP *heap, int key);
 void Lift(HEAP *heap, int i);
 void Sink(HEAP *heap, int i);

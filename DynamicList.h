@@ -12,7 +12,7 @@ typedef struct DynamicList{
     struct DynamicList* next;
 }DynamicList;
 
-DynamicList* create();
+DynamicList* createDL();
 void insertSorted(DynamicList**, int);
 void addFirst(DynamicList**, int);
 void addLast(DynamicList**, int);
