@@ -17,6 +17,7 @@ void Lift(HEAP *heap, int i);
 void Sink(HEAP *heap, int i);
 void Swap(int *a, int *b);
 int Top(HEAP heap);
+int FindH(HEAP,int);
 void PrintHeap(HEAP heap);
 void Delete(HEAP *heap);
 void IncreaseDataAtIndex(HEAP* mH, int index, int value);

@@ -14,9 +14,9 @@ void createH(HEAP *heap){
 }
 
 void Insert(HEAP *heap, int key){
-    if(heap==NULL){
-        createH(&heap);
-    }
+//    if(heap==NULL){
+//        createH(&heap);
+//    }
     (*heap).size++;
     (*heap).elements = (int*)realloc((*heap).elements, (*heap).size*sizeof(int));
     if((*heap).elements==NULL){
@@ -25,6 +25,15 @@ void Insert(HEAP *heap, int key){
     }
     (*heap).elements[(*heap).size-1] = key;
     Lift(heap, (*heap).size - 1);
+}
+
+int FindH(HEAP heap,int key){
+    for (int i = 0; i < heap.size; ++i) {
+        if(heap.elements[i]==key){
+            return i;
+        }
+    }
+    return -1;
 }
 
 void Lift(HEAP *heap, int i){

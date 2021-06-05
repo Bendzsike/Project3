@@ -41,11 +41,52 @@ void DLtime(){ //bendzsi
 }
 
 void HTtime(){ //imola
+    int searchable[3] = {1,2,3};
 
+    capacity=N;
+    createHT();
+
+
+    for(int i=0;i<N;i++){
+        //insertHT(key[i],elements[i]); mi kell legyen a key?
+    }
+
+    for (int i = 0; i < 3; ++i) {
+        clock_t start, end;
+        double elapsed;
+        start = clock();
+
+        //search(key); es itt?
+
+        end = clock();
+        elapsed = ((double) (end - start)) / CLOCKS_PER_SEC;
+        table[i][2] = elapsed;
+        printf(" %lf ",table[i][2]);
+    }
 }
 
 void Htime(){ //imola
+    int searchable[3] = {1,2,3};
 
+    HEAP heap;
+    createH(&heap);
+
+    for(int i=0;i<N;i++){
+        Insert(&heap,elements[i]);
+    }
+
+    for (int i = 0; i < 3; ++i) {
+        clock_t start, end;
+        double elapsed;
+        start = clock();
+
+        FindH(heap, searchable[i]);
+
+        end = clock();
+        elapsed = ((double) (end - start)) / CLOCKS_PER_SEC;
+        table[i][3] = elapsed;
+        printf(" %lf ", table[i][3]);
+    }
 }
 
 void BSTtime(){ //bendzsi
