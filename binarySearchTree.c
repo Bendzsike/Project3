@@ -27,28 +27,10 @@ Node *insertBST(Node *node, int key) {
     return node;
 }
 
-void fillingUp(Node **node) {
-    int array[94];
-    for (int i = 0; i < 94; ++i) {
-        array[i] = (i+32);
+void fillingUp(Node **node, int *array, int length) {
+    for (int i = 0; i < length; ++i) {
+        (*node) = insertBST((*node), array[i]);
     }
-    (*node) = insertBST((*node), 126);
-    push(&(*node),array,0,94);
-}
-
-void push(Node **node, int *array, int first, int last) {
-    if (first > last) {
-        return;
-    }
-    int mid;
-    if ((first + last) % 2 == 0) {
-        mid = (first + last) / 2;
-    } else {
-        mid = (first + last) / 2 + 1;
-    }
-    (*node) = insertBST((*node), array[mid]);
-    push(&(*node), array, first, mid - 1);
-    push(&(*node), array, mid + 1, last);
 }
 
 void preorder(Node* root)

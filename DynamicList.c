@@ -10,6 +10,12 @@ DynamicList* createDL() {
     return node;
 }
 
+void fillList(DynamicList **front, int *array, int length) {
+    for(int i = 0; i < length; ++i) {
+        addLast(&(*front), array[i]);
+    }
+}
+
 void insertSorted(DynamicList **front, int value) {
     DynamicList *new = createDL();
     new->info = value;
@@ -53,6 +59,23 @@ void addLast(DynamicList **front, int value) {
             node = node->next;
         }
         node->next = new;
+    }
+}
+
+int searchInList(DynamicList *front, int value) {
+    if(front == NULL) {
+        return 0;
+    }
+    DynamicList *node = front;
+    while(node->next != NULL) {
+        if(node->info == value) {
+            return 1;
+        } else {
+            node = node->next;
+        }
+    }
+    if(node->next == NULL && node->info != value) {
+        return 0;
     }
 }
 

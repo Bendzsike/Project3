@@ -10,7 +10,7 @@
 #include "IntArray.h"
 #include "hashTable.h"
 
-#define N 200000000
+#define N 200000
 
 double table[3][5];
 int elements[N];

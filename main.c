@@ -1,7 +1,11 @@
 #include "Run.h"
 
 int main() {
-    generateElementsIA();
+    generateElements();
     IAtime();
+    DLtime();
+    //HTtime();
+    //Htime();
+    BSTtime();
     return 0;
 }

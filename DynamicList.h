@@ -13,9 +13,11 @@ typedef struct DynamicList{
 }DynamicList;
 
 DynamicList* createDL();
+void fillList(DynamicList**, int*, int);
 void insertSorted(DynamicList**, int);
 void addFirst(DynamicList**, int);
 void addLast(DynamicList**, int);
+int searchInList(DynamicList*, int);
 void deleteFirst(DynamicList**);
 void deleteLast(DynamicList**);
 void deleteValue(DynamicList**, int);
