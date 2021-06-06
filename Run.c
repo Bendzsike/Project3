@@ -66,8 +66,7 @@ void HTtime(){ //imola
 
 
     for(int i=0;i<N;i++){
-        //insertHT(key[i],elements[i]); mi kell legyen a key?
-        //Maga a hashtable.
+        insertHT(elements[i],elements[i]);
     }
     printf("Hash Table: ");
     for (int i = 0; i < 3; ++i) {
@@ -75,8 +74,7 @@ void HTtime(){ //imola
         double elapsed;
         start = clock();
 
-        //search(key); es itt?
-        //Ez a keresés nem jó. Át kell adni először is a hashtable-t, majd a keresett elemet.
+        search(searchable[i]);
 
         end = clock();
         elapsed = ((double) (end - start)) / CLOCKS_PER_SEC;
